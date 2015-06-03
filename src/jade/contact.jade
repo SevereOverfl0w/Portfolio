@@ -1,0 +1,32 @@
+section#contact
+  header
+    h1 Contact Me
+    p The best ways to contact me, or you can use my contact form!
+  mixin contactMethod
+    tr 
+      td
+        strong
+          block
+      td
+        a(href=attributes.uri + ':' + attributes.value)
+          span= attributes.value
+  .column
+    table#methods
+      +contactMethod(uri='mailto' value='iam@dominic.io') Email
+      +contactMethod(uri='skype' value='SevereOverfl0w') Skype
+  .column
+    h2 Contact Form
+    form#contactForm(action="https://getsimpleform.com/messages?form_api_token=fc1cfac68953247589d22fb66a20544a" method="post")
+      // the redirect_to is optional, the form will redirect to the referrer on submission
+      input(type='hidden' name='redirect_to' value='<the complete return url e.g. http://fooey.com/thank-you.html>')
+      // all your input fields here...
+      div
+        label Name
+        input(type='text' name='Name' placeholder='Johnathon Doeus')
+      div
+        label Email
+        input(type='email' name='Email' placeholder='jdoeus@doeus.com')
+      div
+        label Message
+        textarea(name='Message' rows=4 placeholder='Did you see this funny cat picture?') 
+      input(type='submit' value='Submit')

@@ -1,0 +1,93 @@
+navbarBg = #222533;
+navbarHeight = 100px;
+lightBlue = hsl(195, 94%, 55%);
+darkBlue = hsl(210, 29%, 24%);
+animationTime = 250ms;
+
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  font-family: 'Lato';
+  color: darkBlue;
+
+  font-family: Lato;
+  font-feature-settings: normal;
+  font-kerning: auto;
+  font-language-override: normal;
+  font-size-adjust: none;
+  font-size: 16px;
+  font-stretch: normal;
+  font-style: normal;
+  font-synthesis: weight style;
+  font-variant-alternates: normal;
+  font-variant-caps: normal;
+  font-variant-east-asian: normal;
+  font-variant-ligatures: normal;
+  font-variant-numeric: normal;
+  font-variant-position: normal;
+  font-variant: normal;
+  font-weight: 400;
+  // text-rendering: optimizeLegibility;
+
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+  transition: color animationTime;
+}
+
+body > * {
+  overflow: auto; // Collapsing margins
+  > header {
+    h1 {
+      margin-bottom: 0;
+    }
+    p {
+      opacity: 0.8;
+    }
+  }
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: @top;
+  transform: translate(-50%, -50%);
+}
+
+a:hover {
+  color: lightBlue;
+}
+
+@import '_siteNav.styl'
+@import '_jumbotron.styl'
+@import '_about.styl'
+@import '_portfolio.styl'
+@import '_contact.styl'
+@import '../../node_modules/css-modal/build/modal.css'
+@import '../../node_modules/css-modal/build/modal-stretch.css'
+
+.modal--show .modal-content {
+  border-bottom: none;
+}
+
+.modal--show[data-cssmodal-stretch] .modal-inner {
+  min-height: auto;
+}
+
+.modal-content {
+  .title {
+    margin-bottom: 0;
+  }
+}

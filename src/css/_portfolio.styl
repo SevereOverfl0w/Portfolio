@@ -1,0 +1,125 @@
+@import 'jeet';
+section#portfolio {
+  background-color: #ebebeb;
+  text-align: center;
+
+
+  .portfolio {
+    .portfolio-item {
+      col(1/4, gutter: 0px);
+      height: 150px;
+      position: relative;
+
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      overflow: hidden;
+
+      dist = 15px;
+      .line {
+        size = 1px;
+
+        background-color: white;
+        position: absolute;
+        z-index: 1;
+        transform: scale(0);
+        transition: transform animationTime*2;
+
+        &.left, &.right {
+          width: size;
+          height: 100%;
+        }
+
+        &.left  { left: dist;  }
+        &.right { right: dist; }
+
+        &.top, &.bottom {
+          height: size;
+          width: 100%;
+        }
+
+        &.top    { top: dist;    }
+        &.bottom { bottom: dist; }
+      }
+
+      &:before, &:after {
+        content: '';
+        display: block;
+        opacity: 0;
+        position: absolute;
+        transition: opacity animationTime;
+      }
+      &:before {
+        top: dist; left: dist; right: dist; bottom: dist;
+        background-color: hsla(0, 0, 25%, 65%);
+      }
+
+      &:after {
+        top: 0; left: 0; right: 0; bottom: 0;
+        background-color: hsla(0, 0, 50%, 30%);
+      }
+
+      &:hover {
+        box-shadow: inset 0 0 10px hsla(0, 0, 0, 30%);
+        &:before, &:after {
+          opacity: 1;
+        }
+
+        .details > * {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        .line {
+          transform: scale(1);
+        }
+      }
+
+      .details {
+        color: white;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        width: 80%;
+
+        > * {
+          opacity: 0;
+          position: relative;
+          transition: opacity animationTime, transform animationTime*2;
+          transform: translateY(-25px);
+        }
+
+        .title, .subtext {
+          margin: 0;
+        }
+
+        .view {
+          display: inline-block;
+          margin-right: 0.25em;
+          margin-top: 0.25em;
+
+          &:hover {
+            color: inherit;
+
+            &:after {
+              width: 100%;
+            }
+          }
+
+          &:after {
+            content: '';
+            display: block;
+            height: 1px;
+            width: 0;
+            margin: 0 auto;
+            background-color: white;
+            transition: width animationTime*2;
+          }
+        }
+      }
+
+    }
+  }
+}

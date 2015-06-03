@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    title Hayo
+    link(href='http://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css')
+    // inject:css
+    // endinject
+  body
+    block navbar
+      nav.siteNav
+        mixin navLink
+          li
+            a&attributes(attributes) #{block()}
+        ul.links
+          +navLink(href='#jumbotron') Home
+          +navLink(href='#about') About
+          +navLink(href='#portfolio') Portfolio
+          +navLink(href='#contact') Contact
+    block body
+
+    // inject:js
+    // endinject
