@@ -3,7 +3,6 @@ section#portfolio {
   background-color: #ebebeb;
   text-align: center;
 
-
   .portfolio {
     .portfolio-item {
       col(1/4, gutter: 0px);
@@ -16,31 +15,6 @@ section#portfolio {
       overflow: hidden;
 
       dist = 15px;
-      .line {
-        size = 1px;
-
-        background-color: white;
-        position: absolute;
-        z-index: 1;
-        transform: scale(0);
-        transition: transform animationTime*2;
-
-        &.left, &.right {
-          width: size;
-          height: 100%;
-        }
-
-        &.left  { left: dist;  }
-        &.right { right: dist; }
-
-        &.top, &.bottom {
-          height: size;
-          width: 100%;
-        }
-
-        &.top    { top: dist;    }
-        &.bottom { bottom: dist; }
-      }
 
       &:before, &:after {
         content: '';
@@ -49,18 +23,14 @@ section#portfolio {
         position: absolute;
         transition: opacity animationTime;
       }
-      &:before {
-        top: dist; left: dist; right: dist; bottom: dist;
-        background-color: hsla(0, 0, 25%, 65%);
-      }
 
       &:after {
         top: 0; left: 0; right: 0; bottom: 0;
-        background-color: hsla(0, 0, 50%, 30%);
+        background-color: rgba(darkBlue, 50%);
       }
 
       &:hover {
-        box-shadow: inset 0 0 10px hsla(0, 0, 0, 30%);
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 30%);
         &:before, &:after {
           opacity: 1;
         }
@@ -68,10 +38,6 @@ section#portfolio {
         .details > * {
           opacity: 1;
           transform: translateY(0);
-        }
-
-        .line {
-          transform: scale(1);
         }
       }
 
@@ -93,6 +59,7 @@ section#portfolio {
 
         .title, .subtext {
           margin: 0;
+          text-shadow 1px 1px 0 rgba(0, 0, 0, 0.3)
         }
 
         .view {
