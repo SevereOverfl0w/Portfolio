@@ -29,7 +29,7 @@
     "watchify": "^3.2.1"
   },
   "dependencies": {
-    "css-modal": "^1.3.0",
+    "css-modal": "^1.4.1",
     "eases": "^1.0.6"
   }
 }
