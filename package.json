@@ -23,7 +23,7 @@
     "gulp-stylus": "^2.0.2",
     "gulp-uglify": "^1.2.0",
     "gulp-util": "^3.0.5",
-    "jeet": "^6.1.2",
+    "jeet": "mojotech/jeet#fbf8fb05d900316b09c7106d6ffffce0502f329e",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.2.1"

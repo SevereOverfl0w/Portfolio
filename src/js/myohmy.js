@@ -1,5 +1,4 @@
 var CssModal = require('css-modal');
-
 CssModal.init();
 
 var Ease = require('eases/sine-out');
