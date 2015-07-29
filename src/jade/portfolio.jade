@@ -12,56 +12,90 @@ section#portfolio
         .left.line
         .right.line
         .details
-          h2.title= attributes.title
+          h2.title #{attributes.company} #{attributes.title}
       .modal--show(tabindex="-1" role="dialog" aria-labelledby="modal-label" aria-hidden="true" id='modal-' + modalCount data-cssmodal-stretch)
         .modal-inner
           header#modal-label
           .modal-content
             img(src=attributes.src)
-            h3.title= attributes.title
-            span A website made for&nbsp;
-              em #{attributes.company || attributes.title}
-            if attributes.liveLink
-              div
-                a(href=attributes.liveLink) View Live
-            block
+            div
+              h2.jobname= attributes.title
+                small &nbsp;for&nbsp;
+                  em= attributes.company
+              if attributes.liveLink
+                .live-link
+                  a(href=attributes.liveLink) View Live
+            .details
+              block
         a.modal-close(href="#!" title="Close this modal" data-close="Close" data-dismiss="modal") ?
       - modalCount += 1;
 
     +portfolio-item(
       src='https://imgur.com/6DSAn9a.png'
-      title='Fiftee Store'
+      title='Store'
       company='Fiftee'
       liveLink='http://fiftee.co')
         p I build a store for Fiftee on Shopify
     +portfolio-item(
       src='http://i.imgur.com/8LKacjS.png'
-      title='The Chunk Community'
+      title='Community'
       company='The Chunk'
       liveLink='http://thechunk.net/')
-      p I built a community website for The Chunk, a Minecraft minigame server. I used Node.js to build a new authentication system, which integrated seamlessly into Discourse; a game browser; a helper application processor; and social integrations.
+      .desc
+        h4.title Description
+        p Integrated forum login and theme. Built helper application sorter, player stat viewer, game browser, admin panel, and social integrations.
+      .features
+        h4.title Technologies used
+        ul.features-list
+          li Vanilla Forums
+          li Hapi.js on io.js
+          li CSS with Stylus
+          li Gulp build system
+          li Jade html templating
     +portfolio-item(
       src='https://static.pexels.com/photos/3644/pizza-restaurant-dinner-lunch-large.jpg'
-      title='Online Pizza Store'
-      company='Anonymous Pizza Company')
-      p An online store was integrated into wordpress to take orders online for delivery & collection. The orders, when made, were sent to a tablet within each store, and could be rejected or accepted by the individual store & needed to notify the user of this case. Doing this saved the company large amounts of money, due to the costs of their online payment processor rising.
+      title='Store'
+      company='Milano Pizza')
+        .desc
+          h4.title Description
+          p Ecommerce store was extended to orders for delivery & collection. Payment could be taken in cash or paypal. Orders went to tablet in kitchen.
+        .features
+          h4.title Technologies used
+          ul.features-list
+            li Wordpress
+            li PHP
+            li Woocommerce
+            li REST API implementation
+            li GCM Android notifications
     +portfolio-item(
       src='http://i.imgur.com/x0KfmMi.jpg'
-      title='Digital Honours Board'
+      title='Digital Board'
       company='Creative Honour Boards')
-        p I built a virtual board backend
+        .desc
+          h4.title Description
+          p Digital tablet honour board. Automatic app update feature. Admin panel to insert board data. API for mobile application. Excel data import.
+        .features
+          h4.title Technologies used
+          ul.features-list
+            li Django
+            li Python
+            li ZeroMQ
+            li APK parser
+            li REST API implementation
+            li (Prototype) Node.js, React, MongoDB
     +portfolio-item(
       src='http://i.imgur.com/t3vkJHq.png'
-      title='Dedioutlet'
+      title='Server store'
+      company='Dedioutlet'
       liveLink='http://example.com')
       p Dedioutlet required a new website to advertise their servers. I emphasised a low page loading time which has been shown to boost sales, to do this I strictly avoided dependencies, and used Gulp to automatically reduce the size of all files.
     +portfolio-item(
       src='http://i.imgur.com/fY71HBx.png'
-      title='Island Clash Community'
-      company='Isles Softworks')
-      p I built a community website for Island Clash, a Clash of Clans-like game in Minecraft. I built a static site to power Home/About pages, and created a custom theme for discourse to integrate it into the site. I used AJAX to connect to discourse\'s REST api, and display news on the home page.
+      title='Community'
+      company='Island Clash')
+        p Discourse forum news on homepage. Integrated forum theme to have website's layout & colours. Created home/about/wiki and versatile layout.
     +portfolio-item(
-      src='http://i.imgur.com/ue8R6o5.png'
+      src='http://i.imgur.com/DGbLy67.png'
       title='Site updates'
       company='Mineocity'
       liveLink='http://www.mineocityhosting.com/')
