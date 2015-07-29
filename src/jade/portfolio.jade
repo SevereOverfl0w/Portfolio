@@ -35,7 +35,17 @@ section#portfolio
       title='Store'
       company='Fiftee'
       liveLink='http://fiftee.co')
-        p I build a store for Fiftee on Shopify
+        .desc
+          h4.title Description
+          p Tweaked theme to match provided design. Created site plugin using Clojure, adding additional functionality.
+        .features
+          h4.title Technologies used
+          ul.features-list
+            li Shopify
+            li Liquid templating
+            li Clojure
+            li REST API Consuming
+            li OAuth2
     +portfolio-item(
       src='http://i.imgur.com/8LKacjS.png'
       title='Community'
@@ -86,9 +96,18 @@ section#portfolio
     +portfolio-item(
       src='http://i.imgur.com/t3vkJHq.png'
       title='Server store'
-      company='Dedioutlet'
-      liveLink='http://example.com')
-      p Dedioutlet required a new website to advertise their servers. I emphasised a low page loading time which has been shown to boost sales, to do this I strictly avoided dependencies, and used Gulp to automatically reduce the size of all files.
+      company='Dedioutlet')
+        .desc
+          h4.title Description
+          p Site to advertise servers. Integration with billing to get unsold servers. Emphasis on fast page loading time, by minifying all files.
+        .features
+          h4.title Technologies used
+          ul.features-list
+            li Gulp
+            li Stylus (Jeet, Nib)
+            li Jade
+            li Node.js (Cheerio) scraper
+            li WHMCS
     +portfolio-item(
       src='http://i.imgur.com/fY71HBx.png'
       title='Community'
