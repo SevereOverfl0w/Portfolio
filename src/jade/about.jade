@@ -1,13 +1,35 @@
 section#about
   .centerWrapper
-    h1 About Me
-    #text
-      article 
-        h2 Who I am
-        p Hi, I'm Dominic. I'm a freelance web developer from Exeter, Devon. I live with my girlfriend and puppy, Sven. I love the creative challenges that all aspects of web devlopment provide, from interfacing with a database, to playing with a new front-end library.js. In the rest of my time, I enjoy exercising which I think is key to a long life, and reading books to learn new things.
-      article
-        h2 How can I help you?
-        p I have mad coding skillz bro
+    // h1 Me
     #avatar
       img(src='http://i.imgur.com/4wR8JeF.jpg')
-
+      p#who Resident of Exeter, England. Boyfriend to Katie. Owner of dog, Sven. Book reader. Learner. Health conscious. Aspiring code wizard.
+    #text
+      article#what
+        h2 What can you do for me?
+        mixin do
+          li
+            .checkmark
+            span
+              block
+        ol.custom-icon-list
+         +do Build a new website.
+         +do Create a plugin, extension, or theme.
+         +do Update an existing website.
+         +do Seamlessly integrate forums, store, etc.
+         +do Create safe website update procedures
+      article#how
+        h2 What can you work with?
+        p I have realised that all of technologies are similar, and I can learn any of them without issue.
+        p I've got extensive practical exprience using these technologies:
+        ol
+          li Javascript,&nbsp;
+            small and libraries React/Gulp/JQuery/Browserify/Node.js
+          li CSS,&nbsp;
+            small and preprocessors: Stylus/Sass/Less
+          li HTML,&nbsp;
+            small and templating: Jade/Django/Jinja/Handlebars/Hiccup
+          li Server technologies,&nbsp;
+            small such as Python/Node.js/Clojure/PHP
+          li Platforms&nbsp;
+            small including Shopify/Discourse/Vanilla/Xenforo/Enjin
