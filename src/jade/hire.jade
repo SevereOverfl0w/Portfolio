@@ -1,7 +1,8 @@
 section#hire
   header
     h1 Hire Me
-    p The best ways to contact me, or you can use my contact form!
+    p Contact me for a quick chat. I'll get back to you with a quote.
+    p If you accept, you will pay a 40% downpayment, and the rest after. Payments can be made by Paypal or Bank Transfer.
   mixin contactMethod
     tr 
       td
@@ -11,6 +12,7 @@ section#hire
         a(href=attributes.uri + ':' + attributes.value)
           span= attributes.value
   .column
+    h2 Lets talk
     table#methods
       +contactMethod(uri='mailto' value='iam@dominic.io') Email
       +contactMethod(uri='skype' value='SevereOverfl0w') Skype
@@ -21,12 +23,12 @@ section#hire
       input(type='hidden' name='redirect_to' value='<the complete return url e.g. http://fooey.com/thank-you.html>')
       // all your input fields here...
       div
-        label Name
+        label Your Name
         input(type='text' name='Name' placeholder='Johnathon Doeus')
       div
-        label Email
+        label Your Email
         input(type='email' name='Email' placeholder='jdoeus@doeus.com')
       div
         label Message
-        textarea(name='Message' rows=4 placeholder='Did you see this funny cat picture?') 
+        textarea(name='Message' rows=4 placeholder="I'd like a website to...")
       input(type='submit' value='Submit')
