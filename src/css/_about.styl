@@ -3,7 +3,6 @@ section#about
   padding-top 2rem
   .centerWrapper 
     margin-bottom @margin-top
-    // center()
     font-weight light
     font-style normal
     max-width 1440px
@@ -13,6 +12,8 @@ section#about
     #avatar 
       margin-bottom 1em
       j-column(1/4)
+      +mobile()
+        j-column(1)
       img 
         max-width 100%
         max-height 220px
@@ -24,54 +25,42 @@ section#about
     #text
       text-align left
       j-column(3/4)
+      +mobile()
+        j-column(1)
       > *
         j-column(1/2, gutter: 5)
+        +mobile()
+          j-column(1, cycle: 1)
+
 
       margin-bottom 3em
       line-height 1.4em
 
-checkSize = 2.5rem
+checkSize = 1.75rem
 .custom-icon-list
   list-style none
   padding-left 0
 
-  li
-    height checkSize
-    margin-bottom 0.5rem
-
-  span
-    position relative
-    top -(checkSize/4)
-    display inline-block
-    font-size 1.2em
-    line-height checkSize
-
-.checkmark
-  lineWidth = 5px
-  lineCol = darkBlue
-  lineAng = 135deg
-  lineOppAng = 180deg-(lineAng)
+  font-size 1.2em
   display inline-block
-  width checkSize
-  height @width
-  position relative
-  margin-right 1em
+  line-height checkSize
 
-  &:before, &:after
-    content ''
-    height lineWidth
-    background-color lineCol
-    position absolute
 
-  &:before
-    // Long arm
-    width 100%
-    transform rotate(lineAng)
-    right 0
-    top (@width/2)
+  li
+    min-height checkSize
+    margin-bottom 0.25rem
 
-  &:after
-    width 25%
-    transform rotate(lineOppAng)
-    left 0
-    bottom (@width/2)
+    .icon-checkmark
+      margin-right 0.5em
+      position relative
+      bottom -0.1em // who knows?
+
+.icon
+  display inline-block
+  width 1em
+  height 1em
+  fill currentColor
+
+.icon-checkmark
+  font-size checkSize
+  color darkBlue

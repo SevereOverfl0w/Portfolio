@@ -15,6 +15,10 @@
   padding-left 2rem
   padding-right @padding-left
 
+  +mobile()
+    position static
+    padding 0.5rem
+
   .links 
     list-style none
     padding 0
@@ -31,5 +35,16 @@
       &:last-child
         margin-right 0
 
+      +mobile()
+        width 50%
+        text-align center
+        margin auto
+
+        &:first-child, &:last-child
+          margin auto
+
 body 
   padding-top navbarHeight
+
+  +mobile()
+    padding-top 0

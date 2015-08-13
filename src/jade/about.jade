@@ -1,4 +1,11 @@
 section#about
+  svg
+    defs
+      symbol#icon-checkmark(viewbox='0 0 1024 1024')
+        title checkmark
+        // path.path1(d='M192 384l-192 192 384 384 640-640-192-192-448 448z')
+        // path.path1(d="M383.147 981.333l-243.627-426.411 148.181-84.651 97.664 170.837 352.043-598.443 147.072 86.485-501.333 852.181z")
+        path.path1(d="M864 128l-480 480-224-224-160 160 384 384 640-640z")
   .centerWrapper
     // h1 Me
     #avatar
@@ -9,9 +16,9 @@ section#about
         h2 What can you do for me?
         mixin do
           li
-            .checkmark
-            span
-              block
+            svg.icon.icon-checkmark
+              use(xlink:href='#icon-checkmark')
+            block
         ol.custom-icon-list
          +do Build a new website.
          +do Create a plugin, extension, or theme.

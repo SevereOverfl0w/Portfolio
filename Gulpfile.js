@@ -39,7 +39,7 @@ function cleanCSS(cb){
 function stylus() {
   return Gulp.src(['src/css/*.styl', '!src/css/_*.styl'])
              .pipe($.stylus({
-               use: [require('jeet')()],
+               use: [require('jeet')(), require('rupture')()],
                'include css': true
              }))
              .pipe($.autoprefixer())

@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "css-modal": "^1.4.1",
-    "eases": "^1.0.6"
+    "eases": "^1.0.6",
+    "rupture": "^0.6.1"
   }
 }

@@ -6,6 +6,10 @@ section#portfolio
   .portfolio 
     .portfolio-item 
       j-column(1/4, gutter: 0px, cycle: 4)
+
+      +mobile()
+        j-column(1)
+
       height 150px
       position relative
 
@@ -91,8 +95,13 @@ section#portfolio
       margin 0
   .desc
     j-column(5/8)
+    +mobile()
+      j-column(1)
   .features
     j-column(3/8)
+    +mobile()
+      j-column(1)
+
   img
     max-height 400px
     max-height 45vh

@@ -28,7 +28,7 @@ html, body
   font-variant-position normal
   font-variant normal
   font-weight 400
-  // text-rendering optimizeLegibility
+  text-rendering optimizeLegibility
 
 h1 
   font-size 3rem
@@ -43,7 +43,11 @@ a
   transition: color animationTime
 
 body > *
-  overflow: auto // Collapsing margins
+  overflow hidden // Collapsing margins
+
+  +mobile()
+    padding-left 0.5em
+    padding-right @padding-left
   > header 
     h1 
       margin-bottom: 0
@@ -74,5 +78,3 @@ a:hover
 
 .modal--show[data-cssmodal-stretch] .modal-inner 
   min-height: auto
-
-
