@@ -5,10 +5,14 @@ section#portfolio
 
   .portfolio 
     .portfolio-item 
-      j-column(1/4, gutter: 0px, cycle: 4)
+      +desktop()
+        j-column(1/4, gutter: 0px, cycle: 4)
 
       +mobile()
         j-column(1)
+
+      +tablet()
+        j-column(1/3, gutter: 0px, cycle: 3)
 
       height 150px
       position relative

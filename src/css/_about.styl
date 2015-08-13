@@ -14,6 +14,8 @@ section#about
       j-column(1/4)
       +mobile()
         j-column(1)
+      +tablet()
+        j-column(1/2, offset: 1/4)
       img 
         max-width 100%
         max-height 220px
@@ -26,6 +28,8 @@ section#about
       text-align left
       j-column(3/4)
       +mobile()
+        j-column(1)
+      +tablet()
         j-column(1)
       > *
         j-column(1/2, gutter: 5)
