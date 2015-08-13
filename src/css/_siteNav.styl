@@ -15,10 +15,6 @@
   padding-left 2rem
   padding-right @padding-left
 
-  +mobile()
-    position static
-    padding 0.5rem
-
   .links 
     list-style none
     padding 0
@@ -47,4 +43,4 @@ body
   padding-top navbarHeight
 
   +mobile()
-    padding-top 0
+    padding-top navbarHeight*2 // 2 lines caused by width (1/2)

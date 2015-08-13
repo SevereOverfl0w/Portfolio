@@ -61,6 +61,13 @@ body > *
   left: @top
   transform: translate(-50%, -50%)
 
+  +mobile()
+    // no center on mobile?
+    position relative
+    top auto
+    left @top
+    transform initial
+
 a:hover
   color lightBlue
 
