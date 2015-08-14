@@ -43,6 +43,7 @@ function stylus() {
                'include css': true
              }))
              .pipe($.autoprefixer())
+             .pipe($.csso())
              .pipe($.size({showFiles: true, title: 'stylus'}))
              .pipe($.rev())
              .pipe(Gulp.dest('./dist/css/'));
