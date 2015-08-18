@@ -1,3 +1,4 @@
+@import 'jeet'
 .siteNav 
   background-color navbarBg
   color white
@@ -32,12 +33,15 @@
         margin-right 0
 
       +mobile()
-        width 50%
-        text-align center
+        // Start reset
         margin auto
 
         &:first-child, &:last-child
           margin auto
+        // End reset
+
+        j-column(1/2, gutter: 0, cycle: 2)
+        text-align center
 
 body 
   padding-top navbarHeight
