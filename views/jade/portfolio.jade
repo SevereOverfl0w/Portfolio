@@ -9,7 +9,9 @@ section#portfolio
         a.link(style=attributes.src ? {'background-image': 'url(' + attributes.src + ')'} : '' href=attributes.link)
           .details
             h2.title #{attributes.company} #{attributes.title}
-        p.brief= attributes.brief
+        .bottom
+          p.brief= attributes.brief
+          a.read-more(href=attributes.link) read more
 
     each item in site.portfolioItems
       +portfolio-item(
