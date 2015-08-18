@@ -3,13 +3,45 @@ title: Server store
 image: http://i.imgur.com/t3vkJHq.png
 company: Dedioutlet
 technologies: [Gulp, Stylus, Jade, Node.js, WHMCS]
-brief: Dedioutlet required a site to advertise in-stock servers. An emphasis on fast page loading time was also desired due to it's sales-boosting.
+brief: Dedioutlet required a site to advertise virtual, dedicated & other servers.
 ---
 extends ../views/portfolio-layout
 
 block article
   :marked
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-    tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-    vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-    no sea takimata sanctus est Lorem ipsum dolor sit amet.
+    # The Process
+
+    I wanted something that communicated the simplicity of working with
+    Dedioutlet, and for that simplicity to be shown in the ease of use of the
+    site.
+
+    I also wanted to ensure that the site would feel fast.
+    [Research](http://perspectives.mvdirona.com/2009/10/the-cost-of-latency/)
+    has found that page loading time has a huge effect on the number of sales.
+    Particularly in an industry where you are fighting hard for your customers
+    attention, I wanted to ensure that the website would have maximum effect.
+
+    Furthermore, I noticed in a number of competitors discrepancies between
+    their main website, and the information that was in WHMCS. I decided that it
+    was important that customers always have up-to-date information. 
+
+    # The Solutions
+    The design used a simple palette. It was a monotone palette focusing on
+    blue. This simple palette made it easy for potentials customers to know
+    where to look, and what they were looking at. This made it very easy for
+    customers to navigate the site, and select a potential product they'd be
+    interested in buying.
+
+    To make the site fast, I built it statically, using Gulp.js to converge a
+    multitude of libraries into creating the smallest possible files. Amongst a
+    combination of Stylus, Jade, Htmlmin, uglify and cssmin, I was able to
+    create tiny files automatically without impacting the development process. I
+    also made sure to ditch notions of monolithic css frameworks, and define
+    most of the widgets myself, using a few Stylus libraries for media queries
+    and a grid.
+
+    To ensure consistency between WHMCS and the main site, I built a little
+    script that would grab data from WHMCS. Each product's metadata such as it's
+    name, RAM, CPU, etc. was then passed to the templates as a local variable.
+    The data would be nicely formatted, and made easy to comprehend as part of
+    the main site.
