@@ -1,6 +1,3 @@
-var CssModal = require('css-modal');
-CssModal.init();
-
 var Ease = require('eases/sine-out');
 
 function currentYPosition() {
@@ -75,18 +72,20 @@ function smoothScroll(node) {
 Array.prototype.forEach.call(document.querySelectorAll('.siteNav .links a'), function(link){
   var dest = document.getElementById(link.hash.substr(1))
   link.addEventListener('click', (function(dest){return function(e){
-    e.preventDefault();
-    smoothScroll(dest);
+    if(dest){
+      e.preventDefault();
+      smoothScroll(dest);
+    }
   }})(dest))
 })
 
-var scrollFromTop = 0;
-document.addEventListener('cssmodal:hide', function(){
-  window.scroll(0, scrollFromTop);
-});
+window.addEventListener('load', function(e){
+  var dest = document.getElementById(window.location.hash.substr(1));
+  var destPos = elmYPosition(dest);
+  var tolerance = 1; // offset tolerance
+  var isUnoffsetLocation = (destPos+tolerance) >= currentYPosition() && currentYPosition() >= (destPos-tolerance)
 
-Array.prototype.forEach.call(document.querySelectorAll('a[href*="#modal-"]'), function(modalOpenLink){
-  modalOpenLink.addEventListener('click', function(e){
-    scrollFromTop = currentYPosition();
-  });
-});
+  if(dest && isUnoffsetLocation){
+    smoothScroll(dest); // not really smooth, but gets the correct location.
+  }
+})

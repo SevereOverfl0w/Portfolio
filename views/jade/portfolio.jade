@@ -1,0 +1,20 @@
+section#portfolio
+  header
+    h1 Featured Work
+    // p Some of my best work
+    p
+  div.portfolio
+    mixin portfolio-item
+      .portfolio-item
+        a.link(style=attributes.src ? {'background-image': 'url(' + attributes.src + ')'} : '' href=attributes.link)
+          .details
+            h2.title #{attributes.company} #{attributes.title}
+        p.brief= attributes.brief
+
+    each item in site.portfolioItems
+      +portfolio-item(
+        src=item.image
+        link=item._url
+        title=item.title
+        brief!=item.brief
+        company=item.company)

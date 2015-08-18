@@ -1,37 +1,20 @@
 {
-  "name": "portfolio",
-  "version": "1.0.0",
-  "private": true,
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "g": "gulp",
-    "b": "babel-node",
-    "start": "npm run g watch"
-  },
-  "author": "Dominic Monroe",
-  "devDependencies": {
-    "auto-plug": "^1.0.2",
-    "browser-sync": "^2.7.6",
-    "browserify": "^10.2.3",
-    "del": "^1.2.0",
-    "gulp": "gulpjs/gulp#4.0",
-    "gulp-autoprefixer": "^2.3.0",
-    "gulp-csso": "^1.0.0",
-    "gulp-inject": "^1.2.0",
-    "gulp-jade": "^1.0.1",
-    "gulp-rev": "^4.0.0",
-    "gulp-size": "^1.2.1",
-    "gulp-stylus": "^2.0.2",
-    "gulp-util": "^3.0.5",
-    "jeet": "mojotech/jeet#fbf8fb05d900316b09c7106d6ffffce0502f329e",
-    "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0",
-    "watchify": "^3.2.1"
-  },
+  "name": "-portfolio",
+  "description": "Dominic Monroe&#39;s magykal portfolio",
   "dependencies": {
-    "css-modal": "^1.4.1",
+    "autoprefixer-stylus": "0.7.x",
+    "axis": "0.4.x",
+    "coffee-script": "1.9.x",
+    "css-pipeline": "0.2.x",
+    "dynamic-content": "^0.3.0",
     "eases": "^1.0.6",
-    "rupture": "^0.6.1"
+    "jade": "1.x",
+    "jeet": "mojotech/jeet#fbf8fb05d900316b09c7106d6ffffce0502f329e",
+    "js-pipeline": "0.2.x",
+    "jstransformer-marked": "0.0.x",
+    "marked": "0.3.x",
+    "roots-browserify": "^0.4.0",
+    "rupture": "0.6.x",
+    "stylus": "0.51.x"
   }
 }
