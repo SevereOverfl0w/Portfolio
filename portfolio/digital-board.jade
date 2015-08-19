@@ -3,13 +3,51 @@ title: Digital Board
 image: http://i.imgur.com/x0KfmMi.jpg
 company: Creative Honour Boards
 technologies: [Django, Python, ZeroMQ]
-brief: A digital honours board, that would supply data to a tablet to be mounted in a location. Data entry had to be simple & powerful to allow for updates.
+brief: A highly customizable digital honours board, a high tech honours board hosted on an android tablet.
 ---
 extends ../views/portfolio-layout
 
 block article
   :marked
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-    tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-    vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-    no sea takimata sanctus est Lorem ipsum dolor sit amet.
+    # The Process
+    Creative Honour Boards approached
+    [Carl](http://www.peopleperhour.com/freelancer/carl/android-development/275297)
+    and I to create a new way to create honours boards. An honours board is
+    pictured below, to as I didn't know it by this name either.
+
+    ![Honours Board](http://www.creativehonourboards.co.uk/wp-content/uploads/2015/07/Glass-Effect-Web-Image.jpg)
+
+    Creative Honour Boards wanted to create a product of interactive honour
+    boards. They'd be hosted on a large tablet and wall mounted on location.
+    They needed to be highly customizable, allowing font, background and colours,
+    to all be modifiable for each customer. Updates to both the application, and
+    the boards, should be pushed out automatically to the tablets.
+
+    Carl would handle the Android side of things, and I would handle the admin
+    panel & REST backend.
+
+    To build the initial prototype, I used Hapi.js & MongoDB as the driving
+    technologies. As all data was only relational to the board, it made it
+    simple to quickly build a prototype to test the viability of the project,
+    and allowed me to experiment with different input layouts for the data.
+    React.js powered much of the front-end forms, and due to it's nature, was
+    extremely fast in allowing me to model form layouts.
+
+    After we'd shown this version to Creative Honour Boards, they were able to
+    go out and get feedback from real customers on their interaction with the
+    project. A mix of feedback came back, giving us new directions to head in.
+
+    The next version of the project was built using Django & Python. Django's
+    Admin Panel made it really simple to create a data entry section for all the
+    boards, in a simple way. Django's vast array of plugins made things like
+    colour pickers just a few commands away. As the data format changed,
+    Django's modelling system was extremely useful, and worked perfectly with
+    adding new relationships, fields & models.
+
+    To build the live pushes of boards to the tablet, we originally used GCM,
+    a google push notification service for developers. We also relied on the
+    private channel functionality of the Google Play Store. Ultimately, it
+    was decided that having a google account logged into each tablet was not an
+    option. So we implemented both of these features ourselves using ZeroMQ to
+    push data down to the app, which turned out to be an extremely reliable way
+    to push data down to the client.
