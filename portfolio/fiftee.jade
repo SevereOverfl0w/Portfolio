@@ -10,7 +10,27 @@ extends ../views/portfolio-layout
 
 block article
   :marked
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-    tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-    vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-    no sea takimata sanctus est Lorem ipsum dolor sit amet.
+    *Note:* Fiftee is an on-going project, and therefore this write-up is not yet
+    complete.
+
+    # The Process
+
+    Fiftee first required a theme that matched their design. As launch was
+    imminent, it was decided that the fastest way to do this was to buy a
+    pre-existing theme, and extend it.
+
+    I was determined to maintain the same level of configuration options that
+    the theme came with, this would allow Fiftee to make small changes to the
+    site without needing to hire me back in to edit HTML & CSS.
+
+    My first port of call was to clean up the template. Removing advertisements,
+    changing a few colours to match Fiftee's design, and other minor changes.
+
+    The next job that arose was to allow a user to filter products by the
+    charity the product supported. I was able to do this by extending the
+    template with additional filter code, and adding a configuration to allow
+    selection of groups which were charities.
+
+    Fiftee wanted to do an introductory promo of a whole store discount.  There
+    was an extension available to do this, but it came at a cost.  I was able to
+    quickly put together a script in Clojure which had the same functionality, 

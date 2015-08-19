@@ -9,7 +9,31 @@ extends ../views/portfolio-layout
 
 block article
   :marked
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-    tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-    vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-    no sea takimata sanctus est Lorem ipsum dolor sit amet.
+    # The Process
+
+    As we were on a short time-budget with wanting to release a working site
+    into production, I got straight to work putting together the site.
+
+    I built a static site generator using Gulp.js, and began building the site.
+    The first thing I did was use React.js to start displaying dynamic data,
+    that didn't need to be SEO friendly.
+
+    I had 3 dynamic sources of data rendered with React.js:
+
+    1. The homepage news came from Discourse's JSON api, and was rendered using
+    News posted to Discourse was filtered & sorted, and automatically displayed
+    on the homepage.
+
+    2. The tweets came from the result of reverse engineering the Twitter widget
+    api to provide custom rendering of tweets without a backend server. I wanted
+    to avoid a backend server at this point, as it was additional overhead that
+    was not required at this time.
+
+    3. The online player count. This was automatically grabbed from a public
+    minecraft api, that provided a REST api for querying minecraft servers.
+
+    My next job was to start putting together a Buycraft page that would feel
+    like the rest of the site. I used a library I built
+    [Buycraft.js](https://github.com/SevereOverfl0w/buycraft.js) to grab data
+    from Buycraft, at site build time, and pass it as a variable to Jade, the
+    templating library I was using.
