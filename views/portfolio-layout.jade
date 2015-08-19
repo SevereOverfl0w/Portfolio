@@ -4,6 +4,17 @@ block content
   .portfolio-article
     h1.title= post.title
       small &nbsp;for #{post.company}
+
+    p.built-with
+      strong Built with: 
+      span
+        each t, i in post.technologies
+          - var len = (post.technologies.length - 1)
+          if i == len
+            | &nbsp;and&nbsp;
+          | #{t}
+          if i < (len - 1)
+            | ,&nbsp;
     img(src=post.image)
     h2 The brief
     p= post.brief
