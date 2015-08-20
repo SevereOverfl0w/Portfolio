@@ -9,7 +9,36 @@ extends ../views/portfolio-layout
 
 block article
   :marked
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-    tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-    vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-    no sea takimata sanctus est Lorem ipsum dolor sit amet.
+    # The Problems
+
+    A lot of factors would decide the process for building The Chunk.
+
+    1. They already had an army of in-house developers, and they wanted to be able
+    to make changes to the site themselves without relying on external help.
+    This meant the language had to be one they were already familiar with.
+    2. The site needed to be highly reliable. The existing setup with esoTalk
+    had a lot of issues, various parts of esoTalk no longer worked due to the
+    modifications made. Updating esoTalk was also near impossible due to the
+    patches made to core.
+    3. The site needed to be extensible. The Chunk wanted to simplify their
+    registration process, have a custom & integrated user profile, and a unified
+    theme between all parts of their online site.
+
+    # Solutions
+
+    I had to do a lot of research into options.
+
+    For languages, the options were fairly broad: Python, Javascript & Php. I
+    felt that Javascript would be best suited to the task, due to it's highly
+    composable libraries that would make extending the site really easy.
+
+    Improving reliability meant that I needed a forum solution that had external
+    user integration support built-in. The main solutions in this area are
+    Vanilla forums, and Discourse. As Vanilla has the most "standard" feeling
+    forums, it was decided it would be the easiest for users to understand.
+
+    By bringing the user process out of esoTalk, and into a custom application, I
+    was able to control every step of the registration process. The bulk of the
+    site was controlled by the custom application, and therefore extending it
+    was as easy as creating the new part. No worries about shoehorning it into a
+    weird plugin for an esoteric platform.
