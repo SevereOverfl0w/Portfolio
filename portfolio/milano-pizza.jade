@@ -1,6 +1,7 @@
 ---
 title: Webstore
-image: https://static.pexels.com/photos/3644/pizza-restaurant-dinner-lunch-large.jpg
+image: http://i.imgur.com/45uKUnq.png
+live: http://milano-pizzawoking.co.uk/
 company: Milano Pizza
 technologies: [Wordpress, PHP, Woocommerce, Json Rest API, GCM Android notifications]
 brief: Extending Woocommerce to create an online pizza ordering service for delivery & collection.
@@ -9,7 +10,38 @@ extends ../views/portfolio-layout
 
 block article
   :marked
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-    tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-    vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-    no sea takimata sanctus est Lorem ipsum dolor sit amet.
+    Milano wanted to build a way for customers to order pizza online. Ordering
+    is a fairly complex process, as there are so many places were the status of
+    an order can change.
+
+    An order could be picked up, or delivered. The order could go to one of many
+    stores, located in different places, that may not deliver to certain areas.
+    The order could be paid for in cash, or online.
+
+    All of these factors were not covered by standard Woocommerce. A few plugins
+    existed to help with others, like stores and paying with cash.
+
+    In order to review an order, an android tablet was placed in every kitchen.
+    When an order was made, it would be sent to the tablet associated with the
+    store. The store then had the option to reject or accept the order. The
+    order would then be processed like normal by the store. If the order was
+    accepted, the store needed to respond with delivery time, and time until
+    ready.
+
+    I had to extend Woocommerce & Wordpress with new features to allow for this
+    process. I had to first build a wordpress extension for managing GCM
+    devices, and associating them with a particular store.
+
+    After an order was made, I used GCM to push out a notification to that
+    device, with the id of the order.
+
+    The device then polled back to the store, to get information about the
+    order. Each device had it's own unique password, and that would be checked
+    before releasing information to the device.
+
+    I then created an endpoint which would listen for the response of the
+    device. Again, it checked the authorization of the device before continuing.
+    It would attach metadata to the order, and then set the status of the order.
+
+    When the receipt went out for the order status, I used a wordpress filter,
+    to add additional information, such as the delivery time.
