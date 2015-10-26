@@ -11,37 +11,36 @@ extends ../views/_portfolio-layout
 block article
   :marked
     Milano wanted to build a way for customers to order pizza online. Ordering
-    is a fairly complex process, as there are so many places were the status of
-    an order can change.
+    is a complex process, as there are so many places were the status of an
+    order can change.
 
-    An order could be picked up, or delivered. The order could go to one of many
-    stores, located in different places, that may not deliver to certain areas.
-    The order could be paid for in cash, or online.
+    A customer can have an order collected or delivered. The order could go to
+    one of many stores, located in different places, that may not deliver to
+    certain areas. The customer could pay for their order online or in cash.
 
-    All of these factors were not covered by standard Woocommerce. A few plugins
+    Stock Woocommerce did not cover all parts of the site. A few plugins
     existed to help with others, like stores and paying with cash.
 
-    In order to review an order, an android tablet was placed in every kitchen.
-    When an order was made, it would be sent to the tablet associated with the
-    store. The store then had the option to reject or accept the order. The
-    order would then be processed like normal by the store. If the order was
-    accepted, the store needed to respond with delivery time, and time until
-    ready.
+    In every store's kitchen, there was to be an android tablet. When a
+    customer makes an order, it's sent to the tablet for review. The store then
+    had the option to reject or accept the order. The order gets processed like
+    normal by the store. If the store accepts the order, the store needs to
+    respond with a delivery time, and ETA.
 
     I had to extend Woocommerce & Wordpress with new features to allow for this
-    process. I had to first build a wordpress extension for managing GCM
-    devices, and associating them with a particular store.
+    process. I built a Wordpress extension for managing GCM devices, and
+    connecting them to a store.
 
-    After an order was made, I used GCM to push out a notification to that
-    device, with the id of the order.
+    After a customer makes an order, I use GCM to push out a notification to
+    that device, with the ID of the order.
 
-    The device then polled back to the store, to get information about the
-    order. Each device had it's own unique password, and that would be checked
-    before releasing information to the device.
+    The device then connected back to the store, to get information about the
+    order. Each device had it's own unique password, and needed authenticating.
 
     I then created an endpoint which would listen for the response of the
-    device. Again, it checked the authorization of the device before continuing.
-    It would attach metadata to the order, and then set the status of the order.
+    device. Again, it checked the authorization of the device before
+    continuing. It would attach metadata to the order, and then set the status
+    of the order.
 
-    When the receipt went out for the order status, I used a wordpress filter,
-    to add additional information, such as the delivery time.
+    I coded a wordpress filter to add delivery time and ETA to the order
+    receipt.
