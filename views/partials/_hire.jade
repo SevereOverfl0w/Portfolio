@@ -2,33 +2,9 @@ section#hire
   header
     h1 Hire Me
     p Contact me for a quick chat. I'll get back to you with quotes containing price & timeframe.
-    p If you accept, you will pay a 40% downpayment, and the rest after. Payments can be made by Paypal or Bank Transfer.
-  mixin contactMethod
-    tr 
-      td
-        strong
-          block
-      td
-        a(href=attributes.uri + ':' + attributes.value)
-          span= attributes.value
-  .column
-    h2 Lets talk
-    table#methods
-      +contactMethod(uri='mailto' value='iam@dominic.io') Email
-      +contactMethod(uri='skype' value='SevereOverfl0w') Skype
-  .column
-    h2 Contact Form
-    form#contactForm(action="https://getsimpleform.com/messages?form_api_token=fc1cfac68953247589d22fb66a20544a" method="post")
-      // the redirect_to is optional, the form will redirect to the referrer on submission
-      input(type='hidden' name='redirect_to' value='http://dominic.io/message')
-      // all your input fields here...
-      div
-        label Your Name
-        input(type='text' name='Name' placeholder='Johnathon Doeus')
-      div
-        label Your Email
-        input(type='email' name='Email' placeholder='jdoeus@doeus.com')
-      div
-        label Message
-        textarea(name='Message' rows=4 placeholder="I'd like a website to...")
-      input(type='submit' value='Submit')
+
+section
+  div(class="typeform-widget" data-url="https://monroef4.typeform.com/to/ubES5Y" data-text="Contact Form" style="width:100%;height:500px;")
+  script.
+    (function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'widget.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}})()</script>
+
